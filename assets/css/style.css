@@ -27,6 +27,7 @@
   --white: hsla(0, 0%, 100%, 1);
   --white_a10: hsla(0, 0%, 100%, 0.1);
   --white_a5: hsla(0, 0%, 100%, 0.05);
+  --text-primary: #eaeaea; /* Clean and works over both black and grey */
 
   /**
    * typography
@@ -124,7 +125,7 @@ html {
 
 body {
   background-color: var(--eerie-black);
-  color: var(--roman-silver);
+  color: var(--text-primary);
   font-size: 1.6rem;
   line-height: 1.75;
   overflow: hidden;
@@ -527,6 +528,9 @@ body.nav-active { overflow: hidden; }
 
 .education-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pushes top content up, number down */
   background-color: var(--white);
   height: 100%;
   padding: 60px 40px 40px;
@@ -534,7 +538,7 @@ body.nav-active { overflow: hidden; }
 }
 
 .education-card .card-icon ion-icon {
-  color: var(--content-color, var(--raisin-black));
+  color: var(--content-color, var(--eerie-black));
   font-size: 6rem;
   --ionicon-stroke-width: 15px;
 }
@@ -544,7 +548,7 @@ body.nav-active { overflow: hidden; }
   margin-block: 20px;
 }
 
-.education-card .card-text { color: var(--content-color); }
+.education-card .card-text { color: var(--content-color, var(--raisin-black)); }
 
 .education-card .card-number {
   margin-inline-start: auto;
